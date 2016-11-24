@@ -11,10 +11,10 @@ void setup()
 {
   size(500,500);
   fname1="picture1.jpg";
-  open(fname1);
+  img1=loadImage(fname1);
 }
 
 void draw()
 {
-  image(img1,0,0,width,height);
+  image(img1,0,0,250,200);
 }
