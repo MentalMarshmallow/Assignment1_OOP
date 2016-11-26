@@ -7,7 +7,7 @@ class Wave
   float amplitude;
   float count;
   float size;
-  float ampMax;
+  float maxAmp;
   
   PShape circle;
   
@@ -18,9 +18,11 @@ class Wave
     this.size=size;
     inc =TWO_PI/120;
     pos=new PVector(0,center);
+    pos.normalize();//Normalize the vector to the length of 1
+
     count=0;
     theta=0;
-    ampMax=amplitude;
+    maxAmp=amplitude;
     
     circle=createShape(ELLIPSE,pos.x+count,pos.y,10,10);
     circle.setStroke(false);
@@ -38,7 +40,7 @@ class Wave
     }
     
     noStroke();
-    pos.y=amplitude*sin(theta)+center;
+    pos.y=(amplitude*sin(theta))+center;
 
     count++;
     theta=theta +inc;
@@ -55,7 +57,7 @@ class Wave
   {
      if(keyCode==UP)
     {
-      if(amplitude<ampMax)
+      if(amplitude<maxAmp)
       amplitude++;
     }
     else if(keyCode==DOWN)
