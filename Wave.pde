@@ -9,6 +9,8 @@ class Wave
   float size;
   float ampMax;
   
+  PShape circle;
+  
   Wave(float center,float amplitude,float size)
   {
     this.center=center;
@@ -19,20 +21,36 @@ class Wave
     count=0;
     theta=0;
     ampMax=amplitude;
+    
+    circle=createShape(ELLIPSE,pos.x+count,pos.y,size,size);
+    circle.setStroke(false);
   }
   
   void render()
   {
+    int clearX=0;
+    
     noStroke();
     pos.y=amplitude*sin(theta)+center;
-    ellipse(pos.x+count,pos.y,size,size);
+
     count++;
     theta=theta +inc;
     if(count==width)
     {
-      fill(random(0,255),random(0,255),random(0,255));
+      circle.setFill(color(random(0,255),random(0,255),random(0,255) ));
       theta=0;
       count=0;
+      clearX=0;
     }
+      
+    /*Clear infont of the wave
+    */
+    //fill(255);
+    //rect(clearX,0,clearX+1,height);
+    //clearX++;
+    pushMatrix();
+    translate(pos.x+count,pos.y);
+    shape(circle);
+    popMatrix();
   }
 }
