@@ -22,30 +22,46 @@ class Wave
     theta=0;
     ampMax=amplitude;
     
-    circle=createShape(ELLIPSE,pos.x+count,pos.y,size,size);
+    circle=createShape(ELLIPSE,pos.x+count,pos.y,10,10);
     circle.setStroke(false);
+    circle.setFill(color(random(0,255),random(0,255),random(0,255) ));
   }
   
   void render()
   {
-    int clearX=0;
-    
-    noStroke();
-    pos.y=amplitude*sin(theta)+center;
-
-    count++;
-    theta=theta +inc;
-    if(count==width)
+    if(count==size)
     {
       circle.setFill(color(random(0,255),random(0,255),random(0,255) ));
       theta=0;
       count=0;
       clearX=0;
     }
+    
+    noStroke();
+    pos.y=amplitude*sin(theta)+center;
+
+    count++;
+    theta=theta +inc;
       
     pushMatrix();
     translate(pos.x+count,pos.y);
     shape(circle);
     popMatrix();
+  }
+  
+  /* Check keypresses to decrease/increase the amplitude of the wave
+  */
+  void update()
+  {
+     if(keyCode==UP)
+    {
+      if(amplitude<ampMax)
+      amplitude++;
+    }
+    else if(keyCode==DOWN)
+    {
+      if(amplitude>0)
+      amplitude--;
+    }
   }
 }

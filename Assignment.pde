@@ -2,7 +2,7 @@
 Author: Vimal Jain
 Object Oriented Programming Assignment1
 
-Version 0.16
+Version 0.17
 */
 String fname1;
 PImage img1;
@@ -13,22 +13,23 @@ int clearX;//This is the x coordiate to clear the front of each wave
 
 void setup()
 {
-  size(600,600);
-  fname1="picture1.jpg";
+  fullScreen();
+  fname1="Moon_Surface.jpg";
   img1=loadImage(fname1);
-  wave1 = new Wave(height/3,120,10);
-  background(0);
+  wave1 = new Wave(height/3,120,100);
   clearX=(int)wave1.size+1;
 }
 
 void draw()
 {
+  //background(img1);
   
-  image(img1,0,0,width/2,height/2);
+  //image(img1,0,0,width,height);
   wave1.render();
+  wave1.update();
   
-  /*Clear infont of the wave
-  */
+  /*
+  //Clear infont of the waves
   if(clearX==width-1)
   {
     clearX=0;
@@ -36,4 +37,5 @@ void draw()
   fill(0);
   rect(clearX,0,1,height);
   clearX++;
+  */
 }
