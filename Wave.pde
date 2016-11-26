@@ -11,20 +11,19 @@ class Wave
   
   PShape circle;
   
-  Wave(float center,float amplitude,float size)
+  Wave(float x,float center,float amplitude,float size)
   {
     this.center=center;
     this.amplitude=amplitude;
     this.size=size;
     inc =TWO_PI/120;
-    pos=new PVector(0,center);
-    pos.normalize();//Normalize the vector to the length of 1
+    pos=new PVector(x,center);
 
     count=0;
     theta=0;
     maxAmp=amplitude;
     
-    circle=createShape(ELLIPSE,pos.x+count,pos.y,10,10);
+    circle=createShape(ELLIPSE,0,0,10,10);
     circle.setStroke(false);
     circle.setFill(color(random(0,255),random(0,255),random(0,255) ));
   }
@@ -47,7 +46,7 @@ class Wave
       
     pushMatrix();
     translate(pos.x+count,pos.y);
-    shape(circle);
+    shape(circle,0,0);
     popMatrix();
   }
   
