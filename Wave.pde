@@ -28,7 +28,7 @@ class Wave
     theta=0;
     maxAmp=amplitude;
     
-    circle=createShape(ELLIPSE,0,0,10,10);
+    circle=createShape(ELLIPSE,0,0,5,5);
     circle.setStroke(false);
     circle.setFill(color(random(0,255),random(0,255),random(0,255) ));
   }
@@ -49,16 +49,14 @@ class Wave
     count++;
     theta=theta +inc;
     
-    
     for(int i=1;i<size;i++)
     {
+      if(i>count && i<count+10)
+      ;//do nothing
+      else
       shape(circle,pos[i].x,pos[i-1].y);
     }
     
-    if(count==size-2)
-    {
-      pos[count+1].x=pos[count].x;
-    }
   }
   
   /* Check keypresses to decrease/increase the amplitude of the wave
