@@ -1,23 +1,28 @@
 class Wave
 {
-  PVector pos;
+  PVector[] pos;
   float theta;
   float inc;//wave frequency
   float center;
   float amplitude;
-  float count;
-  float size;
+  int count;
+  int size;
   float maxAmp;
   
   PShape circle;
   
-  Wave(float x,float center,float amplitude,float size)
+  Wave(float start,float center,float amplitude,int size)
   {
     this.center=center;
     this.amplitude=amplitude;
     this.size=size;
     inc =TWO_PI/120;
-    pos=new PVector(x,center);
+    
+    pos=new PVector[size];
+    for(int i=0;i<size;i++)
+    {
+      pos[i]=new PVector(start+i,center);
+    }
 
     count=0;
     theta=0;
@@ -34,20 +39,26 @@ class Wave
     {
       circle.setFill(color(random(0,255),random(0,255),random(0,255) ));
       theta=0;
+      inc=TWO_PI/random(100,130);
       count=0;
       clearX=0;
     }
     
-    noStroke();
-    pos.y=(amplitude*sin(theta))+center;
+    pos[count].y=(amplitude*sin(theta))+center;
 
     count++;
     theta=theta +inc;
-      
-    pushMatrix();
-    translate(pos.x+count,pos.y);
-    shape(circle,0,0);
-    popMatrix();
+    
+    
+    for(int i=1;i<size;i++)
+    {
+      shape(circle,pos[i].x,pos[i-1].y);
+    }
+    
+    if(count==size-2)
+    {
+      pos[count+1].x=pos[count].x;
+    }
   }
   
   /* Check keypresses to decrease/increase the amplitude of the wave
@@ -57,12 +68,12 @@ class Wave
      if(keyCode==UP)
     {
       if(amplitude<maxAmp)
-      amplitude++;
+      amplitude+=0.1f;
     }
     else if(keyCode==DOWN)
     {
       if(amplitude>0)
-      amplitude--;
+      amplitude-=0.1f;
     }
   }
 }

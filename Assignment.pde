@@ -2,7 +2,7 @@
 Author: Vimal Jain
 Object Oriented Programming Assignment1
 
-Version 0.19
+Version 0.2
 */
 String fname1;
 PImage img1;
@@ -17,31 +17,24 @@ void setup()
   fullScreen();
   fname1="Moon_Surface.jpg";
   img1=loadImage(fname1);
-  wave1 = new Wave(width/10,height-height/10,30,(width/10)*8);
+  wave1 = new Wave(width/10,height-height/10,30,(int)(width/10)*2);
   clearX=(int)wave1.size+1;
   border=10;
 }
 
 void draw()
 {
-  //background(img1);
+  background(img1);
   
   //image(img1,0,0,width,height);
   noFill();
-  stroke(70,0,67);
-  rect(wave1.pos.x-border,wave1.center-wave1.maxAmp-border,wave1.size+border*2,wave1.maxAmp*2+border*2);//box for the wave
+  stroke(0,209,62);
+  for(int i=0;i<wave1.size+border*2;i+=(wave1.size+border*2)/10)
+  {
+    line(wave1.pos[0].x-border+i,wave1.center-wave1.maxAmp-border,wave1.pos[0].x-border+i,wave1.center-wave1.maxAmp-border+wave1.maxAmp*2+border*2);
+  }
+  rect(wave1.pos[0].x-border,wave1.center-wave1.maxAmp-border,wave1.size+border*2,wave1.maxAmp*2+border*2);//box for the wave
   wave1.render();
   wave1.update();
-  println(wave1.pos.x);
   
-  /*
-  //Clear infont of the waves
-  if(clearX==width-1)
-  {
-    clearX=0;
-  }
-  fill(0);
-  rect(clearX,0,1,height);
-  clearX++;
-  */
 }
