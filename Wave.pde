@@ -43,11 +43,6 @@ class Wave
       clearX=0;
     }
       
-    /*Clear infont of the wave
-    */
-    //fill(255);
-    //rect(clearX,0,clearX+1,height);
-    //clearX++;
     pushMatrix();
     translate(pos.x+count,pos.y);
     shape(circle);
