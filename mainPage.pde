@@ -5,6 +5,7 @@ void mainPage()
 {
   background(img1);
   oxygenMonitor();
+  temperature();
   wave1.render();
   wave1.update();
 }

@@ -2,7 +2,7 @@
 Author: Vimal Jain
 Object Oriented Programming Assignment1
 
-Version 0.24
+Version 0.25
 */
 String fname1;
 PImage img1;
@@ -13,6 +13,7 @@ int border;//border of the boxes
 int pageNum=0;//What page is to be displayed
 float gridHeight;
 float gridWidth;
+gauge gauge1;
 
 void setup()
 {
@@ -25,6 +26,7 @@ void setup()
   
   //Wave for the oxygen levels
   wave1 = new Wave(gridWidth,height-gridHeight,gridHeight/2,(int)(gridWidth)*2);
+  gauge1 = new gauge(width-gridWidth,height-gridHeight/4,gridWidth,0);
   
   border=10;
   textSize(25);

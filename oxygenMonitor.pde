@@ -8,7 +8,7 @@ void oxygenMonitor()
   noFill();
   rect(xPos, yPos, boxWidth, boxHeight);//box for the wave
 
-  stroke(24, 127, 34);
+  stroke(0);
   for (int i=0; i<boxWidth; i+=(boxWidth)/10)//vertical lines for the box
   {
     line(xPos+i, yPos, xPos+i, yPos+boxHeight);
