@@ -4,7 +4,8 @@ void oxygenMonitor()
   float yPos=wave1.center-wave1.maxAmp-border;//y position of the box
   float boxWidth=wave1.size+border*2;
   float boxHeight=wave1.maxAmp*2+border*2;
-
+  
+  strokeWeight(1);
   noFill();
   rect(xPos, yPos, boxWidth, boxHeight);//box for the wave
 

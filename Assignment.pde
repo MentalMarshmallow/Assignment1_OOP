@@ -2,7 +2,7 @@
 Author: Vimal Jain
 Object Oriented Programming Assignment1
 
-Version 0.25
+Version 0.26
 */
 String fname1;
 PImage img1;
@@ -25,8 +25,8 @@ void setup()
   img1=loadImage(fname1);
   
   //Wave for the oxygen levels
-  wave1 = new Wave(gridWidth,height-gridHeight,gridHeight/2,(int)(gridWidth)*2);
-  gauge1 = new gauge(width-gridWidth,height-gridHeight/4,gridWidth,0);
+  wave1 = new Wave(gridWidth,gridHeight*9,gridHeight/2,(int)(gridWidth)*2);
+  gauge1 = new gauge(gridWidth*9,gridHeight*10,gridWidth,0);
   
   border=10;
   textSize(25);
