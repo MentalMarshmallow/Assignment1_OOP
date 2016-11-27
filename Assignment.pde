@@ -2,10 +2,11 @@
 Author: Vimal Jain
 Object Oriented Programming Assignment1
 
-Version 0.26
+Version 0.27
 */
 String fname1;
 PImage img1;
+PFont font;
 float X=0;
 float Y=0;
 Wave wave1;
@@ -29,7 +30,10 @@ void setup()
   gauge1 = new gauge(gridWidth*9,gridHeight*10,gridWidth,0);
   
   border=10;
-  textSize(25);
+  
+  font=createFont("Georgia.vlw",25);
+  
+  textFont(font,25);
 }
 
 void draw()
