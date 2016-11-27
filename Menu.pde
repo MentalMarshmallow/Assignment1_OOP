@@ -1,8 +1,13 @@
+/*Page Number 0
+Loads the menu onto the screen
+*/
+
 void Menu()
 {
+  //Exit Menu when spacebar is pressed
   if(keyPressed && key==' ')
   {
-    pageNum++;
+    pageNum++;//increment pagenumber to exit Page
   }
   background(0);
   stroke(0,209,62);

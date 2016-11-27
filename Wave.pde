@@ -30,18 +30,16 @@ class Wave
     
     circle=createShape(ELLIPSE,0,0,5,1);
     circle.setStroke(false);
-    circle.setFill(color(random(0,255),random(0,255),random(0,255) ));
+    circle.setFill(color(0,93,255));
   }
   
   void render()
   {
     if(count==size)//checks if the wave reaches the end and resets the values
     {
-      circle.setFill(color(0,random(120,255),255));
       theta=0;
       inc=TWO_PI/random(100,130);
       count=0;
-      clearX=0;
     }
     
     pos[count].y=(amplitude*sin(theta))+center;//gets the y coordinate for the point we are on
