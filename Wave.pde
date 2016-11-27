@@ -63,15 +63,17 @@ class Wave
   */
   void update()
   {
-     if(keyCode==UP)
+    if(keyPressed && keyCode==UP)
     {
       if(amplitude<maxAmp)
       amplitude+=0.1f;
+      println(amplitude);
     }
-    else if(keyCode==DOWN)
+    else if(keyPressed && keyCode==DOWN)
     {
       if(amplitude>0)
       amplitude-=0.1f;
+      println(amplitude);
     }
   }
 }

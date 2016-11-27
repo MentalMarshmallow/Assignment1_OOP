@@ -19,5 +19,12 @@ void Heart_Monitor()
     line(xPos,yPos+i,xPos+boxWidth,yPos+i);
   }
   
-  rect(xPos+boxWidth/4,height-boxHeight*2.13,boxWidth/2,boxHeight/2);//zone for name of the box
+  rect(xPos+boxWidth/4,yPos-boxHeight/2,boxWidth/2,boxHeight/2);//zone for name of the box
+  
+  fill(226,217,45);
+  text("Oxygen Level",xPos+boxWidth/4,yPos-boxHeight/8);
+  
+  /*Check the oxygen level
+  */
+  
 }
