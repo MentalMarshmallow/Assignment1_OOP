@@ -2,7 +2,7 @@
 Author: Vimal Jain
 Object Oriented Programming Assignment1
 
-Version 0.21
+Version 0.22
 */
 String fname1;
 PImage img1;
@@ -27,13 +27,8 @@ void draw()
   background(img1);
   
   //image(img1,0,0,width,height);
-  noFill();
-  stroke(0,209,62);
-  for(int i=0;i<wave1.size+border*2;i+=(wave1.size+border*2)/10)
-  {
-    line(wave1.pos[0].x-border+i,wave1.center-wave1.maxAmp-border,wave1.pos[0].x-border+i,wave1.center-wave1.maxAmp-border+wave1.maxAmp*2+border*2);
-  }
-  rect(wave1.pos[0].x-border,wave1.center-wave1.maxAmp-border,wave1.size+border*2,wave1.maxAmp*2+border*2);//box for the wave
+  
+  Heart_Monitor();
   wave1.render();
   wave1.update();
   

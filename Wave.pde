@@ -1,15 +1,15 @@
 class Wave
 {
-  PVector[] pos;
-  float theta;
+  PVector[] pos;//positions of the wave
+  float theta;//the angle of which the point changes
   float inc;//wave frequency
-  float center;
-  float amplitude;
-  int count;
-  int size;
-  float maxAmp;
+  float center;//the center of the wave
+  float amplitude;//the height of the wave
+  int count;//the position of the wave 
+  int size;//the width of the wave
+  float maxAmp;//the maximum height the wave can reach
   
-  PShape circle;
+  PShape circle;//creating a circle shape
   
   Wave(float start,float center,float amplitude,int size)
   {
@@ -18,7 +18,7 @@ class Wave
     this.size=size;
     inc =TWO_PI/120;
     
-    pos=new PVector[size];
+    pos=new PVector[size]; 
     for(int i=0;i<size;i++)
     {
       pos[i]=new PVector(start+i,center);
@@ -28,25 +28,25 @@ class Wave
     theta=0;
     maxAmp=amplitude;
     
-    circle=createShape(ELLIPSE,0,0,5,5);
+    circle=createShape(ELLIPSE,0,0,5,1);
     circle.setStroke(false);
     circle.setFill(color(random(0,255),random(0,255),random(0,255) ));
   }
   
   void render()
   {
-    if(count==size)
+    if(count==size)//checks if the wave reaches the end and resets the values
     {
-      circle.setFill(color(random(0,255),random(0,255),random(0,255) ));
+      circle.setFill(color(0,random(120,255),255));
       theta=0;
       inc=TWO_PI/random(100,130);
       count=0;
       clearX=0;
     }
     
-    pos[count].y=(amplitude*sin(theta))+center;
+    pos[count].y=(amplitude*sin(theta))+center;//gets the y coordinate for the point we are on
 
-    count++;
+    count++;//increments the position of the wave
     theta=theta +inc;
     
     for(int i=1;i<size;i++)
