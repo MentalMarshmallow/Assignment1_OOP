@@ -2,7 +2,7 @@
 Author: Vimal Jain
 Object Oriented Programming Assignment1
 
-Version 0.27
+Version 0.28
 */
 String fname1;
 PImage img1;
