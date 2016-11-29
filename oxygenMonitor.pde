@@ -1,3 +1,5 @@
+/*Displays the oxygen monitor for the user
+*/
 void oxygenMonitor()
 {
   float xPos=wave1.pos[0].x-border;//x position of the box

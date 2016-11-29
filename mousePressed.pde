@@ -1,3 +1,6 @@
+/*Check if the mouse is in the 
+details box
+*/
 void mouseClicked()
 {
   //check if the page is in the actual screen

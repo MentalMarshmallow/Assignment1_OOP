@@ -1,4 +1,5 @@
 /*Page Number 3
+Exits program
 */
 void Exit()
 {

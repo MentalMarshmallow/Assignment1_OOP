@@ -2,7 +2,10 @@
 Author: Vimal Jain
 Object Oriented Programming Assignment1
 
-Version 0.41
+Version 1.00
+
+Program that acts as a spacesuit ui.
+Can use controller
 */
 //Libraries to use the gamepad
 import net.java.games.input.*;
