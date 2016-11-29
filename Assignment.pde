@@ -21,7 +21,10 @@ Gauge gauge1;
 ArrayList<Details> details;  //Arraylist for details
 int display=-1;  //Index to display the details box and text
 
-float thetaY,thetaX;//Used to spin the earth
+//Variables for the earth
+float thetaY;
+PImage earth; 
+PShape globe;
 
 void setup()
 {
@@ -43,6 +46,14 @@ void setup()
   font=createFont("Georgia.vlw",25);
   
   textFont(font,25);
+  
+  //variables for Sphere
+  background(0);
+  earth = loadImage("http://www.solarsystemscope.com/nexus/content/planet_textures/texture_earth_clouds.jpg");
+  globe = createShape(SPHERE, height/4);
+  globe.setTexture(earth);
+  globe.setStroke(false);
+  thetaY=0;
 }
 
 void draw()
@@ -51,8 +62,12 @@ void draw()
   {
     Menu();
   }
-  else
+  else if(pageNum==1)
   {
     mainPage();
+  }
+  else if(pageNum==2)
+  {
+    Sphere();
   }
 }

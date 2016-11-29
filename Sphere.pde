@@ -1,33 +1,27 @@
+//Page Number 2
 void Sphere()
 {
-  PImage earth; 
-  PShape globe;
-  
-  earth = loadImage( "http://www.solarsystemscope.com/nexus/content/planet_textures/texture_earth_clouds.jpg");
-  globe = createShape(SPHERE, 200); 
-  globe.setTexture(earth);
-  globe.setStroke(false);
-  thetaY=0;
-  thetaX=0;
+  background(0);
+  pushMatrix();
+  translate(width/2,height/2);
+  rotateY(thetaY);
+  shape(globe,0,0);
+  popMatrix();
 }
 
-void keyPressed()
+
+void mouseDragged()
 {
-  if(keyPressed && keyCode==LEFT)
+  if(pageNum==2)//Page number for the sphere
   {
-    thetaY++;
+    if(mouseX>pmouseX)
+    {
+      thetaY+=0.1f;
+      println(thetaY);
+    }
+    if(mouseX<pmouseX)
+    {
+      thetaY-=0.1f;
+    }
   }
-  else if(keyPressed && keyCode==RIGHT)
-  {
-    thetaY--;
-  }
-  if(keyPressed && keyCode==UP)
-  {
-    thetaX++;
-  }
-  if(keyPressed && keyCode==DOWN)
-  {
-    thetaX--;
-  }
-  
 }

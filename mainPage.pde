@@ -25,7 +25,7 @@ void mainPage()
   
   if(keyPressed && key=='a')
   {
-    
+    pageNum=2;
   }
   
 }
