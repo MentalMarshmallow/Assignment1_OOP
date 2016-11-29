@@ -2,7 +2,7 @@
 Author: Vimal Jain
 Object Oriented Programming Assignment1
 
-Version 0.33
+Version 0.34
 */
 //Libraries to use the gamepad
 import net.java.games.input.*;
@@ -56,7 +56,6 @@ void setup()
   gauge1 = new Gauge(gridWidth*9,gridHeight*10,gridWidth,0);  //Create a new Gauge 
   details = new ArrayList<Details>();
   details.add(new Details(gridWidth*5.5,0,gridWidth*2.2,gridHeight*2.7));
-  //Details(gridWidth*5.5,0,gridWidth*2.2,gridHeight*2.7);  //Create details object for the earth
   
   border=10;
   
