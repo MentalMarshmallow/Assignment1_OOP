@@ -8,10 +8,16 @@ void mainPage()
   oxygenMonitor();
   
   wave1.render();
-  wave1.update();
+  if(display==2)//Can only be updated if the monitor is clicked
+  {
+    wave1.update();
+  }
   
   gauge1.render();
-  gauge1.update();
+  if(display==1)//Can only be updated if the gauge is clicked
+  {
+    gauge1.update();
+  }
   
   if(display==-1)
   {
@@ -21,12 +27,17 @@ void mainPage()
   {
     Details detail = details.get(display);//displays the details from index display
     detail.render();
-    textView();
+    textView(display);
   }
   
   if((keyPressed && key=='e')||startPressed==true)
   {
     pageNum=2;
+  }
+  
+  if(backPressed==true||(keyPressed && key=='v') )
+  {
+    pageNum=3;
   }
   
 }

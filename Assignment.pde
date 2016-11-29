@@ -2,7 +2,7 @@
 Author: Vimal Jain
 Object Oriented Programming Assignment1
 
-Version 0.34
+Version 0.35
 */
 //Libraries to use the gamepad
 import net.java.games.input.*;
@@ -38,9 +38,6 @@ ControlDevice gpad;
 
 float cursorX;
 float cursorY;
-boolean aPressed=false;
-boolean startPressed=false;
-boolean backPressed=false;
 float speed;
 
 void setup()
@@ -56,6 +53,8 @@ void setup()
   gauge1 = new Gauge(gridWidth*9,gridHeight*10,gridWidth,0);  //Create a new Gauge 
   details = new ArrayList<Details>();
   details.add(new Details(gridWidth*5.5,0,gridWidth*2.2,gridHeight*2.7));
+  details.add(new Details(gridWidth*8,gridHeight*8,gridWidth*2,gridWidth*2) );
+  details.add(new Details(gridWidth*0.5,gridHeight*7.5,gridWidth*3,gridHeight*2.5) );
   
   border=10;
   
@@ -97,5 +96,9 @@ void draw()
   else if(pageNum==2)
   {
     Sphere();
+  }
+  else if(pageNum==3)
+  {
+    Exit();
   }
 }

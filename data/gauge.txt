@@ -1,0 +1,6 @@
+Name: Temperature Gauge
+Description: Measures temperature and warns the
+			user in any significant changes.
+			 
+To change manually use the triggers
+Or the 'w' and 's' buttons

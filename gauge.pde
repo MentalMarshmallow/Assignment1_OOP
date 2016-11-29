@@ -75,13 +75,20 @@ class Gauge
   {
     if (keyPressed && key=='w')
     {
-      if (theta<1.4)
+      if (theta!=1.4 && theta<1.41)
+      {
         theta+=0.1f;
+      }
+        
     } else if (keyPressed && key=='s')
     {
-      if (theta>-1.4)
+      if (theta!=-1.4 && theta>-1.41)
+      {
         theta-=0.1f;
+      }
     }
+    
+    theta=map(gpad.getSlider("Trigger").getValue(),-1,1,-1.4,1.4);
   }
   
   //causes needle to fluctuate

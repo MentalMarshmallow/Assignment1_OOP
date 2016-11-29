@@ -10,7 +10,7 @@ void checkZone()
       if(cursorX>detail.pos.x && cursorX<detail.Width + detail.pos.x)
       {
         //check the y coordinates of the mouse
-        if(cursorY>detail.pos.y && cursorY<detail.Height+detail.pos.x)
+        if(cursorY>detail.pos.y && cursorY<detail.Height+detail.pos.y)
         {
           if(display==i)//if the display is the same number
           {

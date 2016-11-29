@@ -1,0 +1,5 @@
+Name: Oxygen Monitor
+Description: Monitors the oxygen levels in the suit
+
+To change manually use the triggers
+Or the 'w' and 's' buttons.

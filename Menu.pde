@@ -1,5 +1,5 @@
 /*Page Number 0
-Loads the menu onto the screen
+Loads the menu onto the screen with controls and a beginning interface
 */
 
 void Menu()
@@ -10,6 +10,8 @@ void Menu()
   {
     pageNum=1;//increment pagenumber to exit Page
   }
+  
+  //Text and boxes for the user to see
   background(0);
   stroke(0,209,62);
   line(0,gridHeight,width,gridHeight);

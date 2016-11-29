@@ -1,4 +1,7 @@
-//Page Number 2
+/*Page Number 2
+This function creates a sphere that will display the earths texture 
+and allow the user to rotate it
+*/
 void Sphere()
 {
   buttonPressed();

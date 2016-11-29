@@ -1,7 +1,8 @@
 //Displays text in text files
-void textView()
+void textView(int index)
 {
-  String[] lines = loadStrings("Earth.txt");
+  String[] textNames={"Earth.txt","gauge.txt","monitor.txt"};
+  String[] lines = loadStrings(textNames[index]);
   
   fill(0,255,255);
   for(int i=0;i<lines.length;i++)

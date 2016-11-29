@@ -81,38 +81,22 @@ class Wave
     
   }
   
-  void render(int num)
-  {
-    //num is 12
-    if(count>size-num)
-    {
-      theta=0;
-      inc=TWO_PI/random(100,130);
-      count=0;
-    }
-    
-    pushMatrix();
-    translate(pos[count].x,pos[count].y);
-    shape(beat,0,0);
-    popMatrix();
-  
-  }
   
   /* Check keypresses to decrease/increase the amplitude of the wave
   */
   void update()
   {
-    if(keyPressed && keyCode==UP)
+    if (keyPressed && key=='w')
     {
       if(amplitude<maxAmp)
-      amplitude+=0.1f;
-      println(amplitude);
+      amplitude+=1f;
     }
-    else if(keyPressed && keyCode==DOWN)
+    if (keyPressed && key=='s')
     {
       if(amplitude>0)
-      amplitude-=0.1f;
-      println(amplitude);
+      amplitude-=1f;
     }
+    
+    amplitude=map(gpad.getSlider("Trigger").getValue(),-1,1,0,maxAmp);
   }
 }
