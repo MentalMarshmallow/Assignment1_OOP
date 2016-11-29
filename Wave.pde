@@ -83,7 +83,8 @@ class Wave
   
   void render(int num)
   {
-    if(count>size-12)
+    //num is 12
+    if(count>size-num)
     {
       theta=0;
       inc=TWO_PI/random(100,130);

@@ -1,11 +1,11 @@
-class details
+class Details
 {
-  PVector pos;
+  PVector pos; //Top left corner of the box
   float Width;
   float Height;
-  PShape zone;
+  PShape zone;  //Red zone indications object in question
   
-  details(float x,float y,float Width,float Height)
+  Details(float x,float y,float Width,float Height)
   {
     pos=new PVector(x,y);
     this.Width=Width;
@@ -18,9 +18,9 @@ class details
   {
     zone=createShape();
     zone.beginShape();
-    zone.setStroke(color(252,0,0));
-    zone.setStrokeWeight(15);
-    zone.setFill(false);
+    zone.stroke(color(252,0,0));
+    zone.strokeWeight(15);
+    zone.noFill();
     zone.vertex(0,0);
     zone.vertex(0,Height);
     zone.vertex(Width,Height);
@@ -30,6 +30,9 @@ class details
   
   void render()
   {
-    
+    pushMatrix();
+    translate(pos.x,pos.y);
+    shape(zone);
+    popMatrix();
   }
 }

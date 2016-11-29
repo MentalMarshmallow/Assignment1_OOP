@@ -1,4 +1,4 @@
-class gauge
+class Gauge
 {
   float centerX;
   float centerY;
@@ -9,7 +9,7 @@ class gauge
   PVector pos;
   PShape needle;
 
-  gauge(float X, float Y, float radius, float theta)
+  Gauge(float X, float Y, float radius, float theta)
   {
     this.centerX=X;
     this.centerY=Y;

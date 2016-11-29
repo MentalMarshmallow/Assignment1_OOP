@@ -6,10 +6,10 @@ void oxygenMonitor()
   float boxHeight=wave1.maxAmp*2+border*2;
   
   strokeWeight(1);
+  stroke(0);
   noFill();
   rect(xPos, yPos, boxWidth, boxHeight);//box for the wave
 
-  stroke(0);
   for (int i=0; i<boxWidth; i+=(boxWidth)/10)//vertical lines for the box
   {
     line(xPos+i, yPos, xPos+i, yPos+boxHeight);
