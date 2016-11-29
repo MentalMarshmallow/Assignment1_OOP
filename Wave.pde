@@ -1,3 +1,7 @@
+/*A class that creates a wave and the box it is in
+using circles
+*/
+
 class Wave
 {
   //General Wave variables
@@ -10,13 +14,8 @@ class Wave
   int size;//the width of the wave
   float maxAmp;//the maximum height the wave can reach
   
-  //For the heartbeat
-  float gap;//gap between heartbeats
-  float beatSize;//size of the heartbeat
-  
   //Shapes used
   PShape circle;//creating a circle shape
-  PShape beat;//creating a heartbeat shape
   
   Wave(float start,float center,float amplitude,int size)
   {
@@ -24,8 +23,6 @@ class Wave
     this.amplitude=amplitude;
     this.size=size;
     inc =TWO_PI/120;
-    gap=size/2;
-    beatSize=size/10;
     
     pos=new PVector[size]; 
     for(int i=0;i<size;i++)
@@ -37,25 +34,9 @@ class Wave
     theta=0;
     maxAmp=amplitude;
     
-    circle=createShape(ELLIPSE,0,0,5,1);
+    circle=createShape(ELLIPSE,0,0,5,5);
     circle.setStroke(false);
     circle.setFill(color(0,93,255));
-    
-    create();
-  }
-  
-  void create()
-  {
-    beat=createShape();
-    beat.beginShape();
-    beat.noFill();
-    beat.vertex(0,0);//left corner of first spike
-    beat.vertex(beatSize/4,-amplitude);//top spike
-    beat.vertex(3 * (beatSize/4),amplitude);//bottom spike
-    beat.vertex(7 * (beatSize/8),-10);
-    beat.vertex(15 * (beatSize/16),+10);
-    beat.vertex(beatSize,0);
-    beat.endShape();
   }
   
   void render()
@@ -86,17 +67,30 @@ class Wave
   */
   void update()
   {
+    float trigger=gpad.getSlider("Trigger").getValue();
+    println(trigger);
+    
     if (keyPressed && key=='w')
     {
       if(amplitude<maxAmp)
-      amplitude+=maxAmp;
+      amplitude+=0.1f;
     }
     if (keyPressed && key=='s')
     {
-      if(amplitude>0)
-      amplitude-=maxAmp;
+      if(amplitude>maxAmp/2)
+      amplitude-=0.1f;
     }
     
-    amplitude=map(gpad.getSlider("Trigger").getValue(),-1,1,0,maxAmp);//checks if triggers have been pressed and maps it to the amplitude
+    amplitude+=map(gpad.getSlider("Trigger").getValue(),-1,1,-0.1f,0.1f);//checks if triggers have been pressed and maps it to the increment
+    if(amplitude<maxAmp/2)//makes sure that the wave levels dont go beyond half way
+    {
+      amplitude=maxAmp/2;
+    }
+    else if(amplitude>maxAmp)
+    {
+      amplitude=maxAmp;
+      
+    }
+    
   }
 }

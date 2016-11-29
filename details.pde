@@ -1,3 +1,7 @@
+/* Creates a red box around any object whose details are to be
+displayed.
+*/
+
 class Details
 {
   PVector pos; //Top left corner of the box

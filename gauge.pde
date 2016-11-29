@@ -1,3 +1,7 @@
+/*Creates a temperature gauge class that 
+displays a gauge with a needle
+*/
+
 class Gauge
 {
   float centerX;
@@ -75,20 +79,28 @@ class Gauge
   {
     if (keyPressed && key=='w')
     {
-      if (theta!=1.4 && theta<1.41)
+      if (theta<1)
       {
         theta+=0.1f;
       }
         
     } else if (keyPressed && key=='s')
     {
-      if (theta!=-1.4 && theta>-1.41)
+      if (theta>-1)
       {
         theta-=0.1f;
       }
     }
     
-    theta=map(gpad.getSlider("Trigger").getValue(),-1,1,-1.4,1.4);
+    theta+=map(gpad.getSlider("Trigger").getValue(),-1,1,-0.1,0.1);//checks if triggers have been pressed and maps it to the increment
+    if(theta>1)
+    {
+      theta=1;
+    }
+    if(theta<-1)
+    {
+      theta=-1;
+    }
   }
   
   //causes needle to fluctuate

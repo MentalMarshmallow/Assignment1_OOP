@@ -1,3 +1,7 @@
+/* Function to get the left analog sticks input values 
+to display and change the cursor for the controller.
+*/
+
 void drawCursor()
 {
   float xAdd=gpad.getSlider("LeftX").getValue()*conSpeed;
@@ -14,6 +18,8 @@ void drawCursor()
   
   fill(255);
   ellipse(cursorX,cursorY,10,10);
+  
+  //Check if the a button was pressed display a red circle if so
   buttonPressed();
   if(aPressed==true)
   {
