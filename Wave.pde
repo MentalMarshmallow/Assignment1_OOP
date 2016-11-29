@@ -89,14 +89,14 @@ class Wave
     if (keyPressed && key=='w')
     {
       if(amplitude<maxAmp)
-      amplitude+=1f;
+      amplitude+=maxAmp;
     }
     if (keyPressed && key=='s')
     {
       if(amplitude>0)
-      amplitude-=1f;
+      amplitude-=maxAmp;
     }
     
-    amplitude=map(gpad.getSlider("Trigger").getValue(),-1,1,0,maxAmp);
+    amplitude=map(gpad.getSlider("Trigger").getValue(),-1,1,0,maxAmp);//checks if triggers have been pressed and maps it to the amplitude
   }
 }

@@ -2,7 +2,7 @@
 Author: Vimal Jain
 Object Oriented Programming Assignment1
 
-Version 0.35
+Version 0.36
 */
 //Libraries to use the gamepad
 import net.java.games.input.*;
