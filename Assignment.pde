@@ -2,7 +2,7 @@
 Author: Vimal Jain
 Object Oriented Programming Assignment1
 
-Version 0.40
+Version 0.41
 */
 //Libraries to use the gamepad
 import net.java.games.input.*;
@@ -41,7 +41,7 @@ float cursorY;
 float conSpeed;
 
 //User info details
-float temp;
+float temperature;
 float oxygen;
 String name;
 String location;
@@ -58,10 +58,15 @@ void setup()
   wave1 = new Wave(gridWidth,gridHeight*9,gridHeight/2,(int)(gridWidth)*2);  //Wave for the oxygen levels
   gauge1 = new Gauge(gridWidth*9,gridHeight*10,gridWidth,0);  //Create a new Gauge 
   
+  //Details for the earth sphere
   details = new ArrayList<Details>();
-  details.add(new Details(gridWidth*5.5,0,gridWidth*2.2,gridHeight*2.7));//Details for the earth sphere
-  details.add(new Details(gridWidth*8,gridHeight*8,gridWidth*2,gridWidth*2) );//Details for the gauge
-  details.add(new Details(gridWidth*0.5,gridHeight*7.5,gridWidth*3,gridHeight*2.5) );//Details for the oxygen Monitor
+  details.add(new Details(gridWidth*5.5,0,gridWidth*2.2,gridHeight*2.7));
+  
+  //Details for the gauge
+  details.add(new Details(gridWidth*8,gridHeight*8,gridWidth*2,gridWidth*2) );
+  
+  //Details for the oxygen Monitor
+  details.add(new Details(gridWidth*0.5,gridHeight*7.5,gridWidth*3,gridHeight*2.5) );
   
   border=10;
   
@@ -77,6 +82,12 @@ void setup()
   thetaY=0;
   
   controller();
+  
+  //Details for the userInfo
+  temperature=37.0;//37 degrees celcius
+  oxygen=100;//100 percent efficiency
+  location=new String("Moon");//Location of the astronaut
+  name=new String("Kerbal1");
 }
 
 void controller()

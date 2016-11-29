@@ -6,6 +6,7 @@ void mainPage()
   background(backGr);
   drawCursor();
   oxygenMonitor();
+  userInfo();
   
   wave1.render();
   if(display==2)//Can only be updated if the monitor is clicked

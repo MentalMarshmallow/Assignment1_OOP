@@ -60,6 +60,8 @@ class Wave
       shape(circle,pos[i].x,pos[i-1].y);
     }
     
+    oxygen=map(amplitude,maxAmp/2,maxAmp,50,100);
+    
   }
   
   

@@ -20,6 +20,7 @@ void Sphere()
   thetaY+=gpad.getSlider("LeftX").getValue();
   
   text("*Press the back button to exit the screen*",gridWidth*3.5,gridHeight*9);
+  
 }
 
 

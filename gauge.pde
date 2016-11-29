@@ -73,6 +73,8 @@ class Gauge
     }
     
     fluctuate();
+    println(theta);
+    temperature=map(theta,-1,1,20,54);
   }
 
   void update()
