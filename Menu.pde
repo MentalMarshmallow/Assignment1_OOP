@@ -9,9 +9,12 @@ void Menu()
   if(keyPressed && key==' '||startPressed==true)
   {
     pageNum=1;//increment pagenumber to exit Page
+    delay(500);
   }
   
-  //Text and boxes for the user to see
+  /*Text and boxes for the user to see
+  */
+  
   background(0);
   stroke(0,209,62);
   line(0,gridHeight,width,gridHeight);

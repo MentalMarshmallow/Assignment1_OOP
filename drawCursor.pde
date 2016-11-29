@@ -1,7 +1,7 @@
 void drawCursor()
 {
-  float xAdd=gpad.getSlider("LeftX").getValue()*speed;
-  float yAdd=gpad.getSlider("LeftY").getValue()*speed;
+  float xAdd=gpad.getSlider("LeftX").getValue()*conSpeed;
+  float yAdd=gpad.getSlider("LeftY").getValue()*conSpeed;
   
   if(cursorX+xAdd<width && cursorX>0-xAdd)
   {

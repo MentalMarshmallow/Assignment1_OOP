@@ -38,7 +38,7 @@ ControlDevice gpad;
 
 float cursorX;
 float cursorY;
-float speed;
+float conSpeed;
 
 void setup()
 {
@@ -70,6 +70,11 @@ void setup()
   globe.setStroke(false);
   thetaY=0;
   
+  controller();
+}
+
+void controller()
+{
   //Variables for the gamepad
   control = ControlIO.getInstance(this);
   gpad=control.getMatchedDevice("XboxController");
@@ -80,7 +85,7 @@ void setup()
   }
   cursorX=0;
   cursorY=250;
-  speed=8;
+  conSpeed=8;
 }
 
 void draw()

@@ -8,6 +8,7 @@ void Sphere()
   if((keyPressed && key=='b')||backPressed==true)
   {
     pageNum=1;
+    delay(500);
   }
   
   background(0);

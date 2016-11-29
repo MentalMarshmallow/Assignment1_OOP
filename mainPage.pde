@@ -33,6 +33,7 @@ void mainPage()
   if((keyPressed && key=='e')||startPressed==true)
   {
     pageNum=2;
+    delay(100);
   }
   
   if(backPressed==true||(keyPressed && key=='v') )
