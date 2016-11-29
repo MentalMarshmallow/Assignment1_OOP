@@ -1,8 +1,12 @@
 PImage earth; 
 PShape globe;
 float thetaY,thetaX;
+PFont font;
  
 void setup() { 
+  font=createFont("Georgia.vlw",25);
+  
+  textFont(font,25);
   size(600, 600, P3D); 
   background(0);
   earth = loadImage( "http://www.solarsystemscope.com/nexus/content/planet_textures/texture_earth_clouds.jpg");
@@ -17,33 +21,32 @@ void keyPressed()
 {
   if(keyPressed && keyCode==LEFT)
   {
-    thetaY++;
+    thetaY+=0.1f;
   }
   else if(keyPressed && keyCode==RIGHT)
   {
-    thetaY--;
-  }
-  if(keyPressed && keyCode==UP)
-  {
-    thetaX++;
-  }
-  if(keyPressed && keyCode==DOWN)
-  {
-    thetaX--;
+    thetaY-=0.1f;
   }
   
 }
 
 void mouseDragged()
 {
-  pushMatrix();
-  translate(width/2,height/2);
-  rotateY(radians(mouseX));
-  rotateZ(radians(mouseY));
-  shape(globe,0,0);
-  popMatrix();
+  if(mouseX>pmouseX)
+  {
+    thetaY+=0.1f;
+  }
+  if(mouseX<pmouseX)
+  {
+    thetaY-=0.1f;
+  }
 }
 
 void draw() 
-{ 
+{
+  pushMatrix();
+  translate(width/2,height/2);
+  rotateY(thetaY);
+  shape(globe,0,0);
+  popMatrix();
 }

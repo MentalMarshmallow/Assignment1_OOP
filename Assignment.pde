@@ -2,8 +2,13 @@
 Author: Vimal Jain
 Object Oriented Programming Assignment1
 
-Version 0.31
+Version 0.32
 */
+//Libraries to use the gamepad
+import net.java.games.input.*;
+import org.gamecontrolplus.*;
+import org.gamecontrolplus.gui.*;
+
 //File variables
 String fname1;  //Name of the image 
 PImage backGr;  //Image to be displayed as background
@@ -25,6 +30,15 @@ int display=-1;  //Index to display the details box and text
 float thetaY;
 PImage earth; 
 PShape globe;
+
+//Variable names for gamepad
+ControlIO control;
+Configuration config;
+ControlDevice gpad;
+
+float cursorX;
+float cursorY;
+boolean A=false;
 
 void setup()
 {
@@ -54,6 +68,17 @@ void setup()
   globe.setTexture(earth);
   globe.setStroke(false);
   thetaY=0;
+  
+  //Variables for the gamepad
+  control = ControlIO.getInstance(this);
+  gpad=control.getMatchedDevice("XboxController");
+  if (gpad == null) 
+  {
+    println("No suitable device configured");
+    System.exit(-1); // End the program NOW!
+  }
+  cursorX=0;
+  cursorY=250;
 }
 
 void draw()
