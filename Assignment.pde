@@ -2,7 +2,7 @@
 Author: Vimal Jain
 Object Oriented Programming Assignment1
 
-Version 0.32
+Version 0.33
 */
 //Libraries to use the gamepad
 import net.java.games.input.*;
@@ -38,7 +38,10 @@ ControlDevice gpad;
 
 float cursorX;
 float cursorY;
-boolean A=false;
+boolean aPressed=false;
+boolean startPressed=false;
+boolean backPressed=false;
+float speed;
 
 void setup()
 {
@@ -79,6 +82,7 @@ void setup()
   }
   cursorX=0;
   cursorY=250;
+  speed=8;
 }
 
 void draw()

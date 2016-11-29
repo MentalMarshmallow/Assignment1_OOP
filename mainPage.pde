@@ -4,6 +4,7 @@ Loads all the elements on the mainPage
 void mainPage()
 {
   background(backGr);
+  drawCursor();
   oxygenMonitor();
   
   wave1.render();
@@ -23,7 +24,7 @@ void mainPage()
     textView();
   }
   
-  if(keyPressed && key=='a')
+  if((keyPressed && key=='e')||startPressed==true)
   {
     pageNum=2;
   }
