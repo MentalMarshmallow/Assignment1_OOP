@@ -2,7 +2,7 @@
 Author: Vimal Jain
 Object Oriented Programming Assignment1
 
-Version 0.38
+Version 0.39
 */
 //Libraries to use the gamepad
 import net.java.games.input.*;
@@ -64,11 +64,10 @@ void setup()
   textFont(font,25);
   
   //variables for Sphere
-  background(0);
-  earth = loadImage("http://www.solarsystemscope.com/nexus/content/planet_textures/texture_earth_clouds.jpg");
-  globe = createShape(SPHERE, height/4);
-  globe.setTexture(earth);
-  globe.setStroke(false);
+  earth = loadImage("Earth.jpg");//loads image
+  globe = createShape(SPHERE, height/4);//creates the planet shape
+  globe.setTexture(earth);//sets texture to the image
+  globe.setStroke(false);//prevents lines from appearing on the sphere
   thetaY=0;
   
   controller();
